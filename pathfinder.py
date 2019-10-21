@@ -43,12 +43,12 @@ class Map:
                 self.little_rows_of_colors.append(color_int)
             self.colors_big_list.append(self.little_rows_of_colors)
             self.little_rows_of_colors = []
+        # print(self.colors_big_list[0])
 
     def create_map_image(self):
         self.img = Image.fromarray(np.uint8(self.colors_big_list))
         # self.img.save("test.png")
         # saves a test image
-
 
 class Path:
     def __init__(self, elevations, map):
@@ -131,7 +131,7 @@ class Path:
 
 
 if __name__ == "__main__":
-    map = Map("elevation_large.txt")
+    map = Map("elevation_small.txt")
     map.read_file()
     map.find_elevations()
     map.find_min_and_max()
